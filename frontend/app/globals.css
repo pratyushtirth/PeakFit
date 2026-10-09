@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+/* Tailwind v4 theme variables */
+@theme {
+  --color-primary: #9e0000;
+  --color-background-dark: #000000;
+  --color-background-light: #ffffff;
+  --color-neutral-dark: #0a0a0a;
+  --color-border-dark: #1a1a1a;
+
+  --font-display: "Inter", sans-serif;
+}
+
+/* Base page styling */
+html {
+  background: #000000;
+  color: #f1f5f9;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-display);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Layout fix */
+* {
+  box-sizing: border-box;
+}
+
+/* 🔥 IMPORTANT: Apply scrollbar to ALL scrollable elements */
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #9e0000;
+  border-radius: 10px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #c40000;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #9e0000 #000000;
+}
+
+/* Icons */
+.fill-1 {
+  font-variation-settings: "FILL" 1;
+}
+
+/* Glow */
+.glow-primary {
+  box-shadow: 0 0 30px rgba(158, 0, 0, 0.35);
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.input-dark {
+  @apply w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white outline-none focus:ring-1 focus:ring-red-700;
+}
+/* ── Sage AI Card animations ── */
+@keyframes sagePulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.4; transform: scale(0.75); }
+}
+
+.sage-pulse-dot {
+  animation: sagePulse 2s infinite;
+}
+
+.sage-entry-card:hover {
+  box-shadow: 0 0 28px rgba(158, 0, 0, 0.18);
+}
+
+/* ── Sage Modal animation ── */
+@keyframes sageModalIn {
+  from { transform: scale(0.96); opacity: 0; }
+  to   { transform: scale(1);    opacity: 1; }
+}
+
+.sage-modal-inner {
+  animation: sageModalIn 0.25s ease;
+  background: #0c0c0c;
+  border: 1px solid #1f1f1f;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 1100px;
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  overflow: hidden;
+}

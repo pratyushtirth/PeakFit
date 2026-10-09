@@ -1,0 +1,14 @@
+node_modules/
+.next/
+out/
+.DS_Store
+*.log
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Build output
+dist/
+build/

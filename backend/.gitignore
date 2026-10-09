@@ -1,0 +1,18 @@
+target/
+*.log
+.DS_Store
+*.class
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# IDE files
+.vscode/
+.idea/
+
+# Local configuration overrides
+application-local.properties
+application-local.yml
+application-local.yaml
